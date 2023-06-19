@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Tour D'Kayutanggan</title>
+    <meta name="description" content="360&deg; Image Gallery - A-Frame">
+    <script src="https://aframe.io/releases/1.0.2/aframe.min.js"></script>
+	
+    <script src="https://unpkg.com/aframe-event-set-component@5/dist/aframe-event-set-component.min.js"></script>
+    <script src="https://unpkg.com/aframe-layout-component@5.3.0/dist/aframe-layout-component.min.js"></script>
+    <script src="https://unpkg.com/aframe-template-component@3.2.1/dist/aframe-template-component.min.js"></script>
+    <script src="https://unpkg.com/aframe-proxy-event-component@2.1.0/dist/aframe-proxy-event-component.min.js"></script>
+
+    <!-- Image link template to be reused. -->
+    <script id="link" type="text/html">
+        <a-entity class="link"
+                  geometry="primitive: plane; height: 1; width: 1"
+                  material="shader: flat; src: ${thumb}"
+                  event-set__mouseenter="scale: 1.2 1.2 1"
+                  event-set__mouseleave="scale: 1 1 1"
+                  event-set__click="_target: #image-360; _delay: 300; material.src: ${src}"
+       
+                  sound="on: click; src: #click-sound"></a-entity>
+    </script>
+</head>
+<body>
+    <a-scene>
+        <a-assets>
+
+            <img id="Maps" crossorigin="anonymous" src="https://cdn.glitch.global/e3ebb67a-45f5-4898-8f37-f032a3aa374e/Maps%20Kayutangan.png?v=1687012170280">
+            <img id="P1" crossorigin="anonymous" src="https://cdn.glitch.global/e3ebb67a-45f5-4898-8f37-f032a3aa374e/P1?v=1687013950644">
+            <img id="P2" crossorigin="anonymous" src="https://cdn.glitch.global/e3ebb67a-45f5-4898-8f37-f032a3aa374e/P2?v=1687014243476">
+            <img id="P3" crossorigin="anonymous" src="https://cdn.glitch.global/e3ebb67a-45f5-4898-8f37-f032a3aa374e/P3?v=1687014109651">
+            <img id="P4" crossorigin="anonymous" src="https://cdn.glitch.global/e3ebb67a-45f5-4898-8f37-f032a3aa374e/P4?v=1687014185892">
+            <img id="P5" crossorigin="anonymous" src="https://cdn.glitch.global/e3ebb67a-45f5-4898-8f37-f032a3aa374e/P5.jpg?v=1687055100804">
+            <img id="P6" crossorigin="anonymous" src="https://cdn.glitch.global/e3ebb67a-45f5-4898-8f37-f032a3aa374e/P6.jpg?v=1687055147969">
+            <img id="P7" crossorigin="anonymous" src="https://cdn.glitch.global/e3ebb67a-45f5-4898-8f37-f032a3aa374e/P7.jpg?v=1687055196090">
+            <img id="P8" crossorigin="anonymous" src="https://cdn.glitch.global/e3ebb67a-45f5-4898-8f37-f032a3aa374e/P8.jpg?v=1687055249374">
+            <img id="P9" crossorigin="anonymous" src="https://cdn.glitch.global/e3ebb67a-45f5-4898-8f37-f032a3aa374e/P9.jpg?v=1687055310512">
+            <img id="P10" crossorigin="anonymous" src="https://cdn.glitch.global/e3ebb67a-45f5-4898-8f37-f032a3aa374e/P10.jpg?v=1687055092443">
+            <img id="P11" crossorigin="anonymous" src="https://cdn.glitch.global/e3ebb67a-45f5-4898-8f37-f032a3aa374e/P11.jpg?v=1687055144444">
+            <img id="P12" crossorigin="anonymous" src="https://cdn.glitch.global/e3ebb67a-45f5-4898-8f37-f032a3aa374e/P12.jpg?v=1687055189095">
+            <img id="P13" crossorigin="anonymous" src="https://cdn.glitch.global/e3ebb67a-45f5-4898-8f37-f032a3aa374e/P13.jpg?v=1687055236674">
+            <img id="P14" crossorigin="anonymous" src="https://cdn.glitch.global/e3ebb67a-45f5-4898-8f37-f032a3aa374e/P14.jpg?v=1687055294271">
+            <img id="P15" crossorigin="anonymous" src="https://cdn.glitch.global/e3ebb67a-45f5-4898-8f37-f032a3aa374e/P15.jpg?v=1687055339473">
+            <img id="P16" crossorigin="anonymous" src="https://cdn.glitch.global/e3ebb67a-45f5-4898-8f37-f032a3aa374e/P16..jpg?v=1687055386980">
+            <img id="P17" crossorigin="anonymous" src="https://cdn.glitch.global/e3ebb67a-45f5-4898-8f37-f032a3aa374e/P17..jpg?v=1687055436540">
+            <img id="P18" crossorigin="anonymous" src="https://cdn.glitch.global/e3ebb67a-45f5-4898-8f37-f032a3aa374e/P18..jpg?v=1687055488974">
+            <img id="P19" crossorigin="anonymous" src="https://cdn.glitch.global/e3ebb67a-45f5-4898-8f37-f032a3aa374e/P19..jpg?v=1687055542006">
+            <img id="P20" crossorigin="anonymous" src="https://cdn.glitch.global/e3ebb67a-45f5-4898-8f37-f032a3aa374e/P20..jpg?v=1687055596502">
+            <img id="P21" crossorigin="anonymous" src="https://cdn.glitch.global/e3ebb67a-45f5-4898-8f37-f032a3aa374e/P21..jpg?v=1687055658704">
+            <img id="P22" crossorigin="anonymous" src="https://cdn.glitch.global/e3ebb67a-45f5-4898-8f37-f032a3aa374e/P22..jpg?v=1687055701246">
+            <img id="P23" crossorigin="anonymous" src="https://cdn.glitch.global/e3ebb67a-45f5-4898-8f37-f032a3aa374e/P23..jpg?v=1687055756713">
+            <img id="P24" crossorigin="anonymous" src="https://cdn.glitch.global/e3ebb67a-45f5-4898-8f37-f032a3aa374e/P24..jpg?v=1687055800943">
+          
+            <img id="dotP1" crossorigin="anonymous" src="https://cdn.glitch.global/e3ebb67a-45f5-4898-8f37-f032a3aa374e/P1?v=1679445068815">
+            <img id="dotP2" crossorigin="anonymous" src="https://cdn.glitch.global/e3ebb67a-45f5-4898-8f37-f032a3aa374e/P2?v=1679445101599">
+            <img id="dotP3" crossorigin="anonymous" src="https://cdn.glitch.global/e3ebb67a-45f5-4898-8f37-f032a3aa374e/P3?v=1687064085153">
+            <img id="dotP4" crossorigin="anonymous" src="https://cdn.glitch.global/e3ebb67a-45f5-4898-8f37-f032a3aa374e/P4?v=1679445159173">
+            <img id="dotP5" crossorigin="anonymous" src="https://cdn.glitch.global/e3ebb67a-45f5-4898-8f37-f032a3aa374e/P5?v=1679443967763">
+            <img id="dotP6" crossorigin="anonymous" src="https://cdn.glitch.global/e3ebb67a-45f5-4898-8f37-f032a3aa374e/P6?v=1679445037939">
+            <img id="dotP7" crossorigin="anonymous" src="https://cdn.glitch.global/e3ebb67a-45f5-4898-8f37-f032a3aa374e/P7?v=1687048620922">
+            <img id="dotP8" crossorigin="anonymous" src="https://cdn.glitch.global/e3ebb67a-45f5-4898-8f37-f032a3aa374e/P8?v=1687048646653">
+            <img id="dotP9" crossorigin="anonymous" src="https://cdn.glitch.global/e3ebb67a-45f5-4898-8f37-f032a3aa374e/P9?v=1687048664306">
+            <img id="dotP10" crossorigin="anonymous" src="https://cdn.glitch.global/e3ebb67a-45f5-4898-8f37-f032a3aa374e/P10?v=1687048683833">
+            <img id="dotP11" crossorigin="anonymous" src="https://cdn.glitch.global/e3ebb67a-45f5-4898-8f37-f032a3aa374e/P11?v=1687048701998">
+            <img id="dotP12" crossorigin="anonymous" src="https://cdn.glitch.global/e3ebb67a-45f5-4898-8f37-f032a3aa374e/P12?v=1687048718481">
+            <img id="dotP13" crossorigin="anonymous" src="https://cdn.glitch.global/e3ebb67a-45f5-4898-8f37-f032a3aa374e/P13?v=1687048767123">
+            <img id="dotP14" crossorigin="anonymous" src="https://cdn.glitch.global/e3ebb67a-45f5-4898-8f37-f032a3aa374e/P14?v=1687048781403">
+            <img id="dotP15" crossorigin="anonymous" src="https://cdn.glitch.global/e3ebb67a-45f5-4898-8f37-f032a3aa374e/P15?v=1687048796073">
+            <img id="dotP16" crossorigin="anonymous" src="https://cdn.glitch.global/e3ebb67a-45f5-4898-8f37-f032a3aa374e/P4?v=1679445159173">
+            <img id="dotP17" crossorigin="anonymous" src="https://cdn.glitch.global/e3ebb67a-45f5-4898-8f37-f032a3aa374e/P16?v=1687048815105">
+            <img id="dotP18" crossorigin="anonymous" src="https://cdn.glitch.global/e3ebb67a-45f5-4898-8f37-f032a3aa374e/P17?v=1687048830537">
+            <img id="dotP19" crossorigin="anonymous" src="https://cdn.glitch.global/e3ebb67a-45f5-4898-8f37-f032a3aa374e/P18?v=1687048861341">
+            <img id="dotP20" crossorigin="anonymous" src="https://cdn.glitch.global/e3ebb67a-45f5-4898-8f37-f032a3aa374e/P20?v=1687048893304">
+            <img id="dotP21" crossorigin="anonymous" src="https://cdn.glitch.global/e3ebb67a-45f5-4898-8f37-f032a3aa374e/P21?v=1687048909016">
+            <img id="dotP22" crossorigin="anonymous" src="https://cdn.glitch.global/e3ebb67a-45f5-4898-8f37-f032a3aa374e/P22?v=1687048922824">
+            <img id="dotP23" crossorigin="anonymous" src="https://cdn.glitch.global/e3ebb67a-45f5-4898-8f37-f032a3aa374e/P23?v=1687054734964">
+            <img id="dotP24" crossorigin="anonymous" src="https://cdn.glitch.global/e3ebb67a-45f5-4898-8f37-f032a3aa374e/P24?v=1687054755336">
+          
+			
+			      <audio id="sound" crossorigin="anonymous" src="https://cdn.aframe.io/360-image-gallery-boilerplate/audio/click.ogg"></audio>
+            <img id="image" crossorigin="anonymous" src="https://cdn.glitch.global/e3ebb67a-45f5-4898-8f37-f032a3aa374e/Speaker_Icon.svg.png?v=1687084871661">
+		
+        </a-assets>
+
+        <!-- 360-degree image. -->
+        <a-sky id="image-360" radius="10" src="#P1"
+               animation__fade="property: components.material.material.color; type: color; from: #FFF; to: #000; dur: 300; startEvents: fade"
+               animation__fadeback="property: components.material.material.color; type: color; from: #000; to: #FFF; dur: 300; startEvents: animationcomplete__fade"></a-sky>
+      
+      <!-- Maps -->
+      <a-image src="#Maps" position="-1.8 1.5 -1.8" rotation="10 40 0" scale="4.4 2.2 0"></a-image>
+      
+      <!-- Image links. -->
+        <a-entity id="LP1" layout="type: line; margin: 1.5" material="transparent: true" position="-1.40422 1.69221 -2.07685" rotation="-190 220 90" scale="0.1 0.1 0.1" sound="src: https://cdn.glitch.global/e3ebb67a-45f5-4898-8f37-f032a3aa374e/first-steps-141242.mp3?v=1679480501096; on: click">
+            <a-entity template="src: #link" data-src="#P1" data-thumb="#dotP1"></a-entity>
+        </a-entity>
+      
+      <!-- Image links. -->
+        <a-entity id="LP2" layout="type: line; margin: 1.5" material="transparent: true" position="-1.6376 1.81085 -1.86104" rotation="-190 220 90" scale="0.1 0.1 0.1">
+            <a-entity template="src: #link" data-src="#P2" data-thumb="#dotP2"></a-entity>
+        </a-entity>
+      
+      <!-- Image links. -->
+        <a-entity id="LP3" layout="type: line; margin: 1.5" material="transparent: true" position="-1.66143 1.69221 -1.8609" rotation="-190 220 90" scale="0.1 0.1 0.1">
+            <a-entity template="src: #link" data-src="#P3" data-thumb="#dotP3"></a-entity>
+        </a-entity>
+      
+      <!-- Image links. -->
+        <a-entity id="LP4" layout="type: line; margin: 1.5" material="transparent: true" position="-1.77131 1.69221 -1.76373" rotation="-190 220 90" scale="0.1 0.1 0.1">
+            <a-entity template="src: #link" data-src="#P4" data-thumb="#dotP4"></a-entity>
+        </a-entity>
+      
+      <!-- Image links. -->
+        <a-entity id="LP5" layout="type: line; margin: 1.5" material="transparent: true" position="-1.9516 1.69221 -1.62705" rotation="-190 220 90" scale="0.1 0.1 0.1">
+            <a-entity template="src: #link" data-src="#P5" data-thumb="#dotP5"></a-entity>
+        </a-entity>
+      
+      <!-- Image links. -->
+        <a-entity id="LP6" layout="type: line; margin: 1.5" material="transparent: true" position="-2.03955 1.69221 -1.55367" rotation="-190 220 90" scale="0.1 0.1 0.1">
+            <a-entity template="src: #link" data-src="#P6" data-thumb="#dotP6"></a-entity>
+        </a-entity>
+      
+      <!-- Image links. -->
+        <a-entity id="LP7" layout="type: line; margin: 1.5" material="transparent: true" position="-2.08677 1.58441 -1.5374" rotation="-190 220 90" scale="0.1 0.1 0.1">
+            <a-entity template="src: #link" data-src="#P7" data-thumb="#dotP7"></a-entity>
+        </a-entity>
+      
+      <!-- Image links. -->
+        <a-entity id="LP8" layout="type: line; margin: 1.5" material="transparent: true" position="-2.14223 1.64573 -1.46751" rotation="-190 220 90" scale="0.1 0.1 0.1">
+            <a-entity template="src: #link" data-src="#P8" data-thumb="#dotP8"></a-entity>
+        </a-entity>
+      
+      <!-- Image links. -->
+        <a-entity id="LP9" layout="type: line; margin: 1.5" material="transparent: true" position="-2.19925 1.69266 -1.40172" rotation="-190 220 90" scale="0.1 0.1 0.1">
+            <a-entity template="src: #link" data-src="#P9" data-thumb="#dotP9"></a-entity>
+        </a-entity>
+      
+      <!-- Image links. -->
+        <a-entity id="LP10" layout="type: line; margin: 1.5" material="transparent: true" position="-2.35089 1.34419 -1.36359" rotation="-190 220 90" scale="0.1 0.1 0.1">
+            <a-entity template="src: #link" data-src="#P10" data-thumb="#dotP10"></a-entity>
+        </a-entity>
+      
+      <!-- Image links. -->
+        <a-entity id="LP11" layout="type: line; margin: 1.5" material="transparent: true" position="-2.54191 0.98486 -1.28051" rotation="-190 220 90" scale="0.1 0.1 0.1">
+            <a-entity template="src: #link" data-src="#P11" data-thumb="#dotP11"></a-entity>
+        </a-entity>
+      
+      <!-- Image links. -->
+        <a-entity id="LP12" layout="type: line; margin: 1.5" material="transparent: true" position="-2.60682 0.95886 -1.23034" rotation="-190 220 90" scale="0.1 0.1 0.1">
+            <a-entity template="src: #link" data-src="#P12" data-thumb="#dotP12"></a-entity>
+        </a-entity>
+      
+      <!-- Image links. -->
+        <a-entity id="LP13" layout="type: line; margin: 1.5" material="transparent: true" position="-2.57074 1.08469 -1.23452" rotation="-190 220 90" scale="0.1 0.1 0.1">
+            <a-entity template="src: #link" data-src="#P13" data-thumb="#dotP13"></a-entity>
+        </a-entity>
+      
+      <!-- Image links. -->
+        <a-entity id="LP14" layout="type: line; margin: 1.5" material="transparent: true" position="-2.45206 1.02332 -1.36046" rotation="-190 220 90" scale="0.1 0.1 0.1">
+            <a-entity template="src: #link" data-src="#P14" data-thumb="#dotP14"></a-entity>
+        </a-entity>
+      
+      <!-- Image links. -->
+        <a-entity id="LP15" layout="type: line; margin: 1.5" material="transparent: true" position="-2.36293 1.20368 -1.38017" rotation="-190 220 90" scale="0.1 0.1 0.1">
+            <a-entity template="src: #link" data-src="#P15" data-thumb="#dotP15"></a-entity>
+        </a-entity>
+      
+      <!-- Image links. -->
+        <a-entity id="LP16" layout="type: line; margin: 1.5" material="transparent: true" position="-2.13977 1.20368 -1.57595"  rotation="-190 220 90" scale="0.1 0.1 0.1">
+            <a-entity template="src: #link" data-src="#P16" data-thumb="#dotP16"></a-entity>
+        </a-entity>
+      
+      <!-- Image links. -->
+        <a-entity id="LP17" layout="type: line; margin: 1.5" material="transparent: true" position="-2.20729 1.04629 -1.54555" rotation="-190 220 90" scale="0.1 0.1 0.1">
+            <a-entity template="src: #link" data-src="#P17" data-thumb="#dotP17"></a-entity>
+        </a-entity>
+      
+      <!-- Image links. -->
+        <a-entity id="LP18" layout="type: line; margin: 1.5" material="transparent: true" position="-2.25989 0.91058 -1.54761" rotation="-190 220 90" scale="0.1 0.1 0.1">
+            <a-entity template="src: #link" data-src="#P18" data-thumb="#dotP18"></a-entity>
+        </a-entity>
+      
+      <!-- Image links. -->
+        <a-entity id="LP19" layout="type: line; margin: 1.5" material="transparent: true" position="-2.2728 0.78696 -1.52734" rotation="-190 220 90" scale="0.1 0.1 0.1">
+            <a-entity template="src: #link" data-src="#P19" data-thumb="#dotP19"></a-entity>
+        </a-entity>
+      
+      <!-- Image links. -->
+        <a-entity id="LP20" layout="type: line; margin: 1.5" material="transparent: true" position="-2.37171 0.62145 -1.50536" rotation="-190 220 90" scale="0.1 0.1 0.1">
+            <a-entity template="src: #link" data-src="#P20" data-thumb="#dotP20"></a-entity>
+        </a-entity>
+      
+      <!-- Image links. -->
+        <a-entity id="LP21" layout="type: line; margin: 1.5" material="transparent: true" position="-1.85216 1.24491 -1.79967" rotation="-190 220 90" scale="0.1 0.1 0.1">
+            <a-entity template="src: #link" data-src="#P21" data-thumb="#dotP21"></a-entity>
+        </a-entity>
+      
+      <!-- Image links. -->
+        <a-entity id="LP22" layout="type: line; margin: 1.5" material="transparent: true" position="-1.78529 1.14008 -1.86558" rotation="-190 220 90" scale="0.1 0.1 0.1">
+            <a-entity template="src: #link" data-src="#P22" data-thumb="#dotP22"></a-entity>
+        </a-entity>
+      
+      <!-- Image links. -->
+        <a-entity id="LP23" layout="type: line; margin: 1.5" material="transparent: true" position="-1.51567 1.13124 -2.06307" rotation="-190 220 90" scale="0.1 0.1 0.1">
+            <a-entity template="src: #link" data-src="#P23" data-thumb="#dotP23"></a-entity>
+        </a-entity>
+      
+      <!-- Image links. -->
+        <a-entity id="LP24" layout="type: line; margin: 1.5" material="transparent: true" position="-1.51487 1.3787 -2.0435"  rotation="-190 220 90" scale="0.1 0.1 0.1">
+            <a-entity template="src: #link" data-src="#P24" data-thumb="#dotP24"></a-entity>
+        </a-entity>
+      
+		  
+        <!-- Camera + cursor. -->
+        <a-entity camera look-controls>
+            <a-cursor id="cursor"
+                      animation__click="property: scale; startEvents: click; from: 0.1 0.1 0.1; to: 1 1 1; dur: 150"
+                      animation__fusing="property: fusing; startEvents: fusing; from: 1 1 1; to: 0.1 0.1 0.1; dur: 1500"
+                      event-set__mouseenter="_event: mouseenter; color: springgreen"
+                      event-set__mouseleave="_event: mouseleave; color: black"
+                      raycaster="objects: .link"></a-cursor>
+        </a-entity>
+    </a-scene>
+</body>
+</html>
